@@ -1,0 +1,27 @@
+PROCEDURE tabtri(var arr: ARRAY_OF INTEGER[],n:INTEGER)
+VAR
+    i,j,x:INTEGER
+BEGIN
+    FOR i FROM 1 TO n-1  DO
+        x:=arr[i];
+        j:=i-1;
+        WHILE (0=<j and arr[j]>x) DO
+         arr[j+1]:=x   
+        END_WHILE
+    END_FOR
+END
+
+ALGORITHM playcard
+VAR
+   arr: ARRAY_OF INTEGER[50]
+   i,n:INTEGER 
+BEGIN
+    FOR i FROM 0 TO n-1   DO
+        read (arr[i])
+    END_FOR
+    n=arr.length
+    tabtri(arr,n)
+    FOR i FROM 0 TO n-1  DO
+        write (arr[i]," ");
+    END_FOR
+END
